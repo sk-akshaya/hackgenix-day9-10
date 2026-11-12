@@ -1,0 +1,76 @@
+.done { 
+    text-decoration: line-through;
+}
+
+:root {
+    --primary: #BBF451;
+    --secondary: #393939;
+    --background: #171717;
+    --text: #F5F5F5;
+}
+
+body{
+    background: var(--secondary);
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#todo{
+    background: var(--background);
+    color: var(--text);
+    width: 400;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+h1{
+    color: var(--primary);
+    text-align: center;
+}
+
+#task-list{
+    padding: 10px;
+    width: 100%;
+}
+#task-list li{
+    background: var(--secondary);
+    color: var(--text);
+    border-radius: 5px;
+    padding: 12px;
+    margin: 10px ;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+#task-list button{
+    border-radius: 5px;
+    padding: 3px;
+    background: var(--primary);
+    font-weight: bold;
+}
+
+input{
+    border-radius: 5px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+#task-form button{
+    border-radius: 5px;
+    padding: 9px;
+    background: var(--primary);
+    font-weight: bold;
+}
+
+#task-list input[type="checkbox"] {
+    accent-color: var(--primary);
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
