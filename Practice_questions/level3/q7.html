@@ -1,0 +1,42 @@
+<!--7. Build a live search that filters a list of cities as the user types.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Search</title>
+</head>
+<body>
+    <h2>Search Cities</h2>
+    <input type="text" id="search" placeholder="Enter city name">
+    <ul id="cityList">
+        <li>Chennai</li>
+        <li>Madurai</li>
+        <li>Coimbatore</li>
+        <li>Trichy</li>
+        <li>Salem</li>
+        <li>Bangalore</li>
+        <li>Mumbai</li>
+        <li>Delhi</li>
+        <li>Hyderabad</li>
+        <li>Kochi</li>
+    </ul>
+
+    <script>
+        let search = document.getElementById("search");
+        let cities = document.querySelectorAll("#cityList li");
+        search.addEventListener("input", function() {
+            let value = search.value.toLowerCase();
+            cities.forEach(function(city) {
+                let cityName = city.textContent.toLowerCase();
+                if (cityName.includes(value)) {
+                    city.style.display = "list-item";
+                } else {
+                    city.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!--4. Build a tabs component (3 tabs, 3 panels) using event delegation-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabs Component</title>
+    <style>
+        .panel {
+            display: none;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tabs Example</h2>
+    <div id="tabs">
+        <button data-tab="tab1">HTML</button>
+        <button data-tab="tab2">CSS</button>
+        <button data-tab="tab3">JavaScript</button>
+    </div>
+
+    <div id="tab1" class="panel active">
+        <h3>HTML</h3>
+        <p>HTML is used to create the structure of a webpage.</p>
+    </div>
+    <div id="tab2" class="panel">
+        <h3>CSS</h3>
+        <p>CSS is used to style a webpage.</p>
+    </div>
+    <div id="tab3" class="panel">
+        <h3>JavaScript</h3>
+        <p>JavaScript is used to make webpages interactive.</p>
+    </div>
+
+    <script>
+        document.getElementById("tabs").addEventListener("click", function(event) {
+            if (event.target.tagName === "BUTTON") {
+                let tabId = event.target.dataset.tab;
+                let panels = document.querySelectorAll(".panel");
+
+                panels.forEach(function(panel) {
+                    panel.classList.remove("active");
+                });
+
+                document.getElementById(tabId).classList.add("active");
+            }
+        });
+    </script>
+</body>
+</html>

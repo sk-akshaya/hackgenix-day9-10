@@ -1,0 +1,56 @@
+<!--6. Build a shopping cart: Add to cart buttons, total price, and cart saved in localStorage.-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h2>Shopping Cart</h2>
+    <h3>Products</h3>
+    <div>
+        <p>Laptop - ₹50000</p>
+        <button onclick="addToCart('Laptop', 50000)">Add to Cart</button>
+    </div>
+    <div>
+        <p>Mobile - ₹20000</p>
+        <button onclick="addToCart('Mobile', 20000)">Add to Cart</button>
+    </div>
+    <div>
+        <p>Headphones - ₹2000</p>
+        <button onclick="addToCart('Headphones', 2000)">Add to Cart</button>
+    </div>
+    <h3>My Cart</h3>
+    <ul id="cartList"></ul>
+    <h3 id="total">Total: ₹0</h3>
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        function addToCart(name, price) {
+            cart.push({name: name, price: price});
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        }
+        function displayCart() {
+            let list = document.getElementById("cartList");
+            let total = 0;
+            list.innerHTML = "";
+            cart.forEach(function(item, index) {
+                let li = document.createElement("li");
+                li.innerHTML = item.name + " - ₹" + item.price +
+                    " <button onclick='removeItem(" + index + ")'>Remove</button>";
+
+                list.appendChild(li);
+                total += item.price;
+            });
+            document.getElementById("total").innerHTML = "Total: ₹" + total;
+        }
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        }
+
+        displayCart();
+    </script>
+</body>
+</html>

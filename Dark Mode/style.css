@@ -1,0 +1,18 @@
+body.dark { background: #121212; color: #f1f1f1; }
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    display: block;
+    margin: 10px auto;
+    background: var(--primary);
+    color: var(--background);
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 100px;
+}

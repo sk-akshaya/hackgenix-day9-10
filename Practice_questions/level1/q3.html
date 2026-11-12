@@ -1,0 +1,31 @@
+<!--3. Add a class highlight to the first list item with classList.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="state">States
+        <li>Tamil Nadu</li>
+        <li>Kerala</li>
+        <li>Gujarat</li>
+        <li>Goa</li>
+    </ul>
+<style>
+    .highlight{
+        background-color:chartreuse;
+        color: black;
+        padding: 10px;
+        width: 100px;
+    }
+</style>
+<script>
+    const states = document.querySelector(".state");
+    states.children[0].classList.add("highlight");
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!--3. Build a gallery with filter buttons (All, Beaches, Mountains) that show or hide cards using data-category-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+</head>
+<body>
+    <style>
+        img{
+            width: 200px;
+        }
+    </style>
+    <h2>Image Gallery</h2>
+    <button onclick="filterGallery('all')">All</button>
+    <button onclick="filterGallery('sky')">sky</button>
+    <button onclick="filterGallery('nature')">nature</button>
+    <br><br>
+    <div class="gallery">
+        <div class="card" data-category="sky">
+            <img src="./images/4cc11f28b8409315ad8efcbb405ba4f5.jpg">
+            <p>sky 1</p>
+        </div>
+        <div class="card" data-category="nature">
+            <img src="./images/flower.jpg">
+            <p>nature 1</p>
+        </div>
+        <div class="card" data-category="sky">
+            <img src="./images/images.jpg">
+            <p>sky 2</p>
+        </div>
+        <div class="card" data-category="nature">
+            <img src="./images/nature.jpg">
+            <p>nature 2</p>
+        </div>
+    </div>
+    <script>
+        function filterGallery(category) {
+            let cards = document.querySelectorAll(".card");
+            cards.forEach(function(card) {
+                if (category === "all" ||
+                    card.dataset.category === category) {
+                    card.style.display = "inline-block";
+                }
+                else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!--6. Make a button that hides and shows a paragraph (toggle a hidden class).-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button">click</button>
+    <p>you clicked that button right?</p>
+<style>
+    .hidden {
+    display: none;
+}
+</style>
+
+<script>
+    const btn=document.querySelector("button");
+    const paragraph=document.querySelector("p");
+    btn.addEventListener('click',()=>{
+        paragraph.classList.toggle("hidden");
+    })
+</script>
+</body>
+</html>

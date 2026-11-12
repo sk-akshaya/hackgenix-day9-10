@@ -1,0 +1,92 @@
+<!--2. Build a registration form with real-time validation for name, email, phone and password, with a password strength
+message.-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form onsubmit="return validateForm()">
+        <label>Name:</label>
+        <input type="text" id="name" oninput="checkName()">
+        <span id="nameMsg"></span><br><br>
+
+        <label>Email:</label>
+        <input type="text" id="email" oninput="checkEmail()">
+        <span id="emailMsg"></span><br><br>
+
+        <label>Phone:</label>
+        <input type="text" id="phone" oninput="checkPhone()">
+        <span id="phoneMsg"></span><br><br>
+
+        <label>Password:</label>
+        <input type="password" id="password" oninput="checkPassword()">
+        <span id="passwordMsg"></span><br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        function checkName() {
+            let name = document.getElementById("name").value;
+            document.getElementById("nameMsg").innerHTML =
+                name.trim().length >= 3 ? "Valid" : "Enter at least 3 characters";
+        }
+
+        function checkEmail() {
+            let email = document.getElementById("email").value;
+            let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            document.getElementById("emailMsg").innerHTML =
+                pattern.test(email) ? "Valid" : "Invalid email";
+        }
+
+        function checkPhone() {
+            let phone = document.getElementById("phone").value;
+
+            document.getElementById("phoneMsg").innerHTML =
+                /^[0-9]{10}$/.test(phone) ? "Valid" : "Enter 10 digits";
+        }
+
+        function checkPassword() {
+            let password = document.getElementById("password").value;
+            let msg = document.getElementById("passwordMsg");
+
+            if (password.length < 6) {
+                msg.innerHTML = "Weak Password";
+            }
+            else if (/[A-Z]/.test(password) &&
+                     /[0-9]/.test(password) &&
+                     /[!@#$%^&*]/.test(password)) {
+                msg.innerHTML = "Strong Password";
+            }
+            else {
+                msg.innerHTML = "Medium Password";
+            }
+        }
+
+        function validateForm() {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let password = document.getElementById("password").value;
+
+            let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (name.length < 3 ||
+                !pattern.test(email) ||
+                !/^[0-9]{10}$/.test(phone) ||
+                password.length < 6) {
+
+                alert("Please enter valid details");
+                return false;
+            }
+
+            alert("Registration Successful!");
+            return true;
+        }
+    </script>
+</body>
+</html>

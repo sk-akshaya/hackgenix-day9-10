@@ -1,0 +1,33 @@
+<!--6. Build an accordion: clicking a heading shows or hides its paragraph.-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>document</title>
+</head>
+<body>
+    <h3 onclick="toggleText('p1')">HTML</h3>
+    <p id="p1" style="display:none;">
+        HTML stands for HyperText Markup Language.
+    </p>
+    <h3 onclick="toggleText('p2')">CSS</h3>
+    <p id="p2" style="display:none;">
+        CSS stands for Cascading Style Sheets.
+    </p>
+    <h3 onclick="toggleText('p3')">JavaScript</h3>
+    <p id="p3" style="display:none;">
+        JavaScript is used to make web pages interactive.
+    </p>
+    <script>
+        function toggleText(id) {
+            let para = document.getElementById(id);
+            if (para.style.display === "none") {
+                para.style.display = "block";
+            } else {
+                para.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

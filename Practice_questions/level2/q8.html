@@ -1,0 +1,29 @@
+<!--8. Save the user's name in localStorage and greet them on the next visit.-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Storage</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="Enter your name">
+    <button onclick="saveName()">Submit</button>
+    <h3 id="greeting"></h3>
+    <script>
+        let savedName = localStorage.getItem("username");
+        if (savedName) {
+            document.getElementById("greeting").innerHTML =
+                "Welcome back, " + savedName;
+        }
+        function saveName() {
+            let name = document.getElementById("name").value;
+            if (name !== "") {
+                localStorage.setItem("username", name);
+                document.getElementById("greeting").innerHTML =
+                    "Hello, " + name;
+            }
+        }
+    </script>
+
+</body>
+</html>

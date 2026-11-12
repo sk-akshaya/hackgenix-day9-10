@@ -1,0 +1,48 @@
+<!--1. Build a counter with plus, minus and reset buttons. Turn the number red when negative.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="plus" type="button">+</button>
+    <button id="minus" type="button">-</button>
+    <button id="reset" type="reset">Reset</button>
+    <p>0</p>
+
+<style>
+    .minus{
+        color: red;
+    }   
+</style>
+<script>
+    const plus=document.getElementById("plus");
+    const minus=document.getElementById("minus");
+    const reset=document.getElementById("reset");
+    const paragraph=document.querySelector("p");
+    let count=0;
+    plus.addEventListener('click',()=>{
+        count+=1;
+        paragraph.textContent=count;
+        paragraph.classList.remove("minus");
+    })
+    minus.addEventListener('click',()=>{
+        count-=1;
+        paragraph.textContent=count;
+        if (count < 0) {
+            paragraph.classList.add("minus");
+        } else {
+            paragraph.classList.remove("minus");
+        }
+    })
+    reset.addEventListener('click',()=>{
+        count=0;
+        paragraph.textContent=count;
+        paragraph.classList.remove("minus");
+    })
+
+</script>
+</body>
+</html>

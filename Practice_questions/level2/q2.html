@@ -1,0 +1,32 @@
+<!--2. Create a list from an array of 5 fruits using createElement and append.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="fruit">Fruits</ul>
+
+<script>
+    const fruits=document.getElementById("fruit");
+    const item1=document.createElement("li");
+    item1.textContent="apple";
+    fruits.append(item1);
+    const item2=document.createElement("li");
+    item2.textContent="orange";
+    fruits.append(item2);
+    const item3=document.createElement("li");
+    item3.textContent="mango";
+    fruits.append(item3);
+    const item4=document.createElement("li");
+    item4.textContent="kiwi";
+    fruits.append(item4);
+    const item5=document.createElement("li");
+    item5.textContent="pine apple";
+    fruits.append(item5);
+
+</script>
+</body>
+</html>
