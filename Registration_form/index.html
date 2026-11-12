@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <form id='reg' novalidate>
+        <h3>Registration</h3>
+        <input type='text' id='name' placeholder="Your Name">
+        <small class='error' id='name-error'></small>
+        <input type='email' id='email' placeholder="Email">
+        <small class='error' id='email-error'></small>
+        <input type='text' id='phone' placeholder="Phone">
+        <small class='error' id='phone-error'></small>
+        <input type='password' id='password' placeholder="Password">
+        <small class='error' id='password-error'></small>
+        <button type='submit'>Register</button>
+        
+</form>
+<p id='success'></p>
+    
+</body>
+</html>
